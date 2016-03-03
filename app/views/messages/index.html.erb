@@ -5,14 +5,14 @@
     
   <div class="panel-body">
     <% @messages.each do |message| %>
-      <span class="label label-info"><%= message.name %></span>
-      <%= message.body %>
-      <br>
+      <div>
+        <span class="label label-info"><%= message.name %></span><%= message.body %>
+      </div>
     <% end %>
   </div>
 </div>
 
-<%= form_for(@message) do |f| %>
+<%= form_for(@message, html: {class: "form-horizontal"}) do |f| %>
   名前:
   <%= f.text_field :name %>
 
